@@ -1,35 +1,19 @@
 spring.cloud:
   stream:
-    bindingRetryInterval: 30
+    function.routing.enabled: true
     kafka:
       binder:
-        applicationId: logging-consumer-application
         brokers: localhost
         defaultBrokerPort: 9092
         autoCreateTopics: true
     bindings:
-      charCounter-in-0:
-        destination: messages
-      charCounter-out-0:
-        destination: counts
-        group: counts
-        enableDlq: true
-      lowercase-in-0:
-        destination: messages
-      lowercase-out-0:
-        destination: lowercased
-        group: lowercased
-        enableDlq: true
-      uppercase-in-0:
-        destination: messages
-      uppercase-out-0:
-        destination: uppercased
-        group: uppercased
-        enableDlq: true
+      functionRouter-in-0:
+        destination: input
+      functionRouter-out-0:
+        destination: output
   function:
-    routing:
-      enabled: true
+    routing-expression: "charCount"
     scan:
       enabled: true
-      packages: com.yuknis.loggingconsumer.functions
-    definition: charCounter;lowercase;uppercase
+      packages: com.yuknis.logs.demo.functions
+    definition: charCount;functionRouter

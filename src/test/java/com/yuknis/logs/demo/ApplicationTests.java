@@ -1,10 +1,10 @@
-package com.yuknis.loggingconsumer;
+package com.yuknis.logs.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LoggingConsumerApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {
