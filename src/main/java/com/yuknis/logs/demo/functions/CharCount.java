@@ -12,10 +12,10 @@ public class CharCount implements Function<String, Message<Integer>> {
     @Override
     public Message<Integer> apply(String s) {
 
-        System.out.println(String.format("%s Received: %s", CharCount.class.getName(), s));
+        System.err.println(String.format("%s Received: %s", CharCount.class.getName(), s));
 
-        return  MessageBuilder.withPayload(currentCharCount)
-                    .setHeader("spring.cloud.stream.sendto.destination", "charCount")
+        return  MessageBuilder.withPayload(s.length ( ))
+                    .setHeader("spring.cloud.stream.sendto.destination", "charCountFn-out-0")
                     .build();
 
     }
