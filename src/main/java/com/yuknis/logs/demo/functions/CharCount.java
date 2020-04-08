@@ -15,7 +15,7 @@ public class CharCount implements Function<String, Message<Integer>> {
         System.err.println(String.format("%s Received: %s", CharCount.class.getName(), s));
 
         return  MessageBuilder.withPayload(s.length ( ))
-                    .setHeader("spring.cloud.stream.sendto.destination", "charCountFn-out-0")
+                    .setHeader("spring.cloud.stream.sendto.destination", "charCount-out-0")
                     .build();
 
     }

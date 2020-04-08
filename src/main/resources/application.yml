@@ -7,12 +7,12 @@ spring.cloud:
         defaultBrokerPort: 9092
         autoCreateTopics: true
     bindings:
-      charCountFn-in-0:
+      charCount-in-0:
         destination: input
-      charCountFn-out-0:
+      charCount-out-0:
         destination: output
   function:
     scan:
       enabled: true
       packages: com.yuknis.logs.demo.functions
-    definition: charCountFn
+    definition: charCount

@@ -15,9 +15,9 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@Bean
-	public Function<String, Message<Integer>> charCountFn ( )
-	{
-		return (new CharCount ( ));
-	}
+//	@Bean
+//	public Function<String, Message<Integer>> charCountFn ( )
+//	{
+//		return (new CharCount ( ));
+//	}
 }
